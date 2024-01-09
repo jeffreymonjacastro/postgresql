@@ -11,7 +11,11 @@ CREATE TABLE public.libro_clasico
         NOT VALID
 );
 
+
+-- Se realiza una subconsulta para obtener los datos de los libros que se van a insertar en la tabla libro_clasico
+-- También funciona para el UPDATE y DELETE
+
 INSERT INTO libro_clasico (libro_id, titulo, fecha_publicacion)
 select id, titulo, fecha_publicacion
-from libro 
+from libro
 where fecha_publicacion < '1970-01-01';
