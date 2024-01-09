@@ -1,3 +1,6 @@
+/* Actualizar y eliminar store procedures */
+-- Click derecho, eliminar
+
 
 CREATE OR REPLACE PROCEDURE public.actualizar_usuario(
 	usuario_id integer,
@@ -5,7 +8,7 @@ CREATE OR REPLACE PROCEDURE public.actualizar_usuario(
 	nuevo_telefono character varying)
 LANGUAGE 'sql'
 AS $BODY$
-update usuario 
+update usuario
 	set email = nuevo_email,
 	telefono = nuevo_telefono
 	where id = usuario_id;
