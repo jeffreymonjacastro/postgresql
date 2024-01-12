@@ -1,5 +1,8 @@
+/* Modificar datos xml */
+-- xml() convierte un texto en un tipo de dato xml
+
 Update comentario
-set detalle = xml ('<?xml version="1.0"?>
+set detalle = xml('<?xml version="1.0"?>
 <comentario>
     <libro>Aprende un nuevo deporte en 21 días</libro>
     <comentario>Es muy práctico</comentario>
@@ -11,7 +14,10 @@ set detalle = xml ('<?xml version="1.0"?>
 </comentario>')
 where id = 3;
 
+
 update comentario
-set detalle = xml (replace(detalle::text, 'Tanmay', 'Tammy'))
+set detalle = xml(replace(detalle::text, 'Tanmay', 'Tammy'))
 where id = 1;
+
+
 
